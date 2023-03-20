@@ -3,10 +3,10 @@ import mysql.connector
 
 # change connection info
 conn = mysql.connector.connect(
-    host="green-giants.cluster-cvyu518jf2zy.eu-west-1.rds.amazonaws.com",
-    database="GreenGiants",
-    user="dbadmin",
-    password="12345678ab")
+    host="test",
+    database="test",
+    user="test",
+    password="test")
 
 cur = conn.cursor()
 
@@ -17,7 +17,7 @@ def check_db():
         try:
             cur.execute("CREATE TABLE users (email VARCHAR(255) PRIMARY KEY, password VARCHAR(255), role VARCHAR(255));")
             cur.execute("CREATE TABLE grants (name VARCHAR(255) PRIMARY KEY, ammount INT, site VARCHAR(255));")
-            
+
         except:
             print("I can't create the table")
     cur.execute("SELECT * FROM users ")
@@ -29,7 +29,7 @@ def check_db():
             seed_db()
 
 
-    
+
 
 
 
